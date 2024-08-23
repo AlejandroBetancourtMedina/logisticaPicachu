@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: logisticaPicachu
+  datasource:
+    password: 1
+    url: jdbc:postgresql://localhost:5432/logistica
+    username: postgres
+    jpa:
+      hibernate:
+        ddl-auto:  none # para decirle a la app que cree la tabla
+      properties:
+        hibernate:
+          format_sql: 'true'
+        database-plataform: org.hibernate.dialect.PostgreSQLDialect
+        show-sql: false
+
+  server:
+    port: 8080
+    contextPath: /${spring.application.name}
+    servlet:
+      context-path: /${spring.application.name}
+    error:
+      include-message: always
+      include-exception: true
+      include-binding-errors: always
+
+#Spring Boot Actuator, monitoreo de endpoint
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
