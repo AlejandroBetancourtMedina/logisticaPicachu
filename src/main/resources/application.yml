@@ -5,14 +5,14 @@ spring:
     password: 1
     url: jdbc:postgresql://localhost:5432/logistica
     username: postgres
-    jpa:
+  jpa:
+    hibernate:
+      ddl-auto:  none # para decirle a la app que cree la tabla
+    properties:
       hibernate:
-        ddl-auto:  none # para decirle a la app que cree la tabla
-      properties:
-        hibernate:
-          format_sql: 'true'
-        database-plataform: org.hibernate.dialect.PostgreSQLDialect
-        show-sql: false
+        format_sql: 'true'
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: false
 
   server:
     port: 8080
