@@ -5,10 +5,10 @@ rut VARCHAR(20) PRIMARY KEY,
 nombre VARCHAR(20) NOT NULL,
 ap_paterno VARCHAR(20) NOT NULL,
 ap_materno VARCHAR(20) NOT NULL,
-domicilio VARCHAR(20) NOT NULL,
+domicilio VARCHAR(50) NOT NULL,
 region VARCHAR(20) NOT NULL,
 comuna VARCHAR(20) NOT NULL,
-email VARCHAR(20) NOT NULL
+email VARCHAR(60) NOT NULL
 );
 
 create table IF NOT EXISTS telefono(
